@@ -98,3 +98,23 @@ typedef struct {
     int count;
     int capacity;
 } AVLTrace;
+
+void avl_init(AVLTree *t);
+void avl_clear(AVLTree *t);
+
+bool avl_insert(AVLTree *t, int key, AVLTrace *trace);
+bool avl_remove(AVLTree *t, int key, AVLTrace *trace);
+bool avl_search(AVLTree *t, int key, AVLTrace *trace);
+
+void avl_trace_init(AVLTrace *tr);
+void avl_trace_clear(AVLTrace *tr); 
+
+void avl_snapshot_take(const AVLTree *t, AVLSnapshot *out);
+void avl_snapshot_free(AVLSnapshot *s);
+
+int  avl_height(const AVLTree *t);
+bool avl_validate(const AVLTree *t); 
+int  avl_inorder(const AVLTree *t, int *out, int cap); 
+const char *avl_step_type_name(AVLStepType type);
+
+#endif
