@@ -75,3 +75,26 @@ typedef enum {
     AVL_STEP_BALANCED,
     AVL_STEP_DONE
 } AVLStepType;
+
+typedef enum {
+    AVL_OP_INSERT,
+    AVL_OP_REMOVE,
+    AVL_OP_SEARCH
+} AVLOp;
+
+typedef struct {
+    AVLStepType type;
+    int node_id;
+    int node_id2;
+    char msg[AVL_MSG_LEN];
+    AVLSnapshot snap;
+} AVLStep;
+
+typedef struct {
+    AVLOp op;
+    int key;
+    bool success;
+    AVLStep *steps;
+    int count;
+    int capacity;
+} AVLTrace;
