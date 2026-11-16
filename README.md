@@ -15,6 +15,7 @@ Permite **inserir**, **remover** e **buscar** chaves e acompanhar a árvore na t
 | `avl_visualizer.c` | Programa principal. Arquivo único, com a implementação da AVL embutida e a interface gráfica em raylib. |
 | `avl.c` / `avl.h` | Backend da AVL em C puro, que grava um _trace_ passo a passo de cada operação (com snapshots da árvore). **Não é usado pela build atual**: o visualizador tem sua própria AVL. |
 | `Makefile` | Compila o `avl_visualizer.c`. |
+| `avl_visualizer.exe` | Executável pronto para Windows (gerado com MSYS2, raylib embutido). |
 
 ## Controles
 
