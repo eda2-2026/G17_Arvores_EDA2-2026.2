@@ -66,21 +66,15 @@ make LDLIBS="-lraylib -lGL -lm -lpthread -ldl -lrt -lX11"
  
 **Usando WSL:** no Windows 11 as janelas gráficas funcionam pelo WSLg. Se necessário, rode `wsl --update` no PowerShell e reabra o Ubuntu. Confira com `echo $DISPLAY` (deve aparecer algo como `:0`). Evite compilar dentro de `/mnt/c/...`; copie o projeto para a pasta do Linux (`~`).
 
-### Windows (sem WSL) – MSYS2
+### Windows (sem WSL) 
  
-1. Instale o [MSYS2](https://www.msys2.org) e abra o terminal **MSYS2 UCRT64**.
-2. Instale as ferramentas:
-```bash
-pacman -Syu
-pacman -S mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-make mingw-w64-ucrt-x86_64-raylib
-```
- 
-3. Entre na pasta do projeto (o disco `C:` fica em `/c/`) e compile:
-```bash
-cd /c/Users/SEU_USUARIO/caminho/do/repositorio
-mingw32-make LDLIBS="-lraylib -lopengl32 -lgdi32 -lwinmm -lm"
-./avl_visualizer.exe
-```
+1. Baixe o arquivo `avl_visualizer.exe`, que está na raiz deste repositório
+   (no GitHub: clique no arquivo e depois no botão de download).
+2. Dê dois cliques nele para abrir.
+
+> Na primeira execução, o Windows pode mostrar o aviso "O Windows protegeu seu
+> computador" (SmartScreen), porque o executável não é assinado. Clique em
+> **Mais informações** e depois em **Executar assim mesmo**.
 
 ## Problemas Comuns
  
